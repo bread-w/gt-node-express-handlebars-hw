@@ -7,3 +7,5 @@ var orm = {
     insertOne: function(){},
     updateOne: function(){},
 }
+
+module.exports = orm;
