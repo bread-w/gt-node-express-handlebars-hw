@@ -1,4 +1,5 @@
 var express = require("express");
+var burgerController = require("./controllers/burger_controller.js");
 
 var PORT = process.env.PORT || 3000;
 
@@ -17,14 +18,12 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get("/", function (request, response){
-    response.send("Hello World!");
-})
-// Import routes and give the server access to them.
-// var routes = require("./controllers/catsController.js");
+app.get("/", function (req, res) {
+  response.send("Hello World!");
+});
 
-// app.use(routes);
+app.use("/api", burgerController);
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App now listening at localhost:" + PORT);
 });
