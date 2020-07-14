@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var burger = require("../models/burger.js");
-// const connection = require("../config/connection.js");
+var connection = require("../config/connection.js");
 
 router.get("/", function (req, res) {
   burger.selectAll(function (data) {
@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
       burgers: data,
     };
     console.log(hbsObject);
-    res.render("index",{burgers: data});
+    res.render("index", { burgers: data });
   });
 });
 
@@ -25,8 +25,8 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-  var condition = "id = " + req.params.id;
-  // var condition = parseInt(req.params.id);
+  // var condition = "id = " + req.params.id;
+  var condition = parseInt(req.params.id);
   // change boolean value from 0 -> 1
 
   console.log(condition);

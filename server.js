@@ -1,7 +1,7 @@
 var express = require("express");
 var exphbs = require("express-handlebars");
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -19,9 +19,9 @@ app.set("view engine", "handlebars");
 
 const routes = require("./controllers/burger_controller.js");
 
-console.log(routes);
-
 app.use(routes);
+
+console.log(routes);
 
 app.listen(PORT, function () {
   console.log("App now listening at http://localhost:" + PORT);
