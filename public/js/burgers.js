@@ -32,8 +32,8 @@ $(function () {
       type: "POST",
       data: newBurger,
     }).then(function () {
-      //   console.log("created new cat");
-      // Reload the page to get the updated list
+      //   console.log("created new burger");
+
       location.reload();
     });
   });
