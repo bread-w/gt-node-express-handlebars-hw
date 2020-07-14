@@ -13,7 +13,7 @@ const burger = {
       if (error) {
         return cb(error);
       }
-      cb(null, data);
+      cb(data);
     });
   },
 
@@ -22,7 +22,7 @@ const burger = {
       if (err) {
         return cb(err);
       }
-      cb(null, data);
+      cb(data);
     });
   },
 };
