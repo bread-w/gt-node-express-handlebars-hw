@@ -8,6 +8,7 @@ const burger = {
   },
 
   insertOne: function (name, cb) {
+    event.preventDefault();
     var payload = { burger_name: name };
     orm.insertOne("burgers", payload, function (error, data) {
       if (error) {

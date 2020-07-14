@@ -13,19 +13,20 @@ router.get("/", function (req, res) {
   });
 });
 
-router.post("/api/burger", function (req, res) {
+router.post("/api/burgers", function (req, res) {
   if (typeof req.body === "object" && typeof req.body.name === "string") {
     burger.insertOne(req.body.name, function (err, data) {
       if (err) {
         return res.sendStatus(500);
       }
-      res.sendStatus(201).redirect("/api/burger");
+      res.sendStatus(201).redirect("/api/burgers");
     });
   }
 });
 
-router.put("/api/burger/:id", function (req, res) {
-  var condition = parseInt(req.params.id);
+router.put("/api/burgers/:id", function (req, res) {
+  var condition = "id = " + req.params.id;
+  // var condition = parseInt(req.params.id);
   // change boolean value from 0 -> 1
 
   console.log(condition);
@@ -36,7 +37,7 @@ router.put("/api/burger/:id", function (req, res) {
     } else {
       console.log(data);
     }
-    res.status(201).redirect("/api/burger");
+    res.status(201).redirect("/api/burgers");
   });
 });
 
