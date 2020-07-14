@@ -25,5 +25,5 @@ app.get("/", function (req, res) {
 app.use("/api", burgerController);
 
 app.listen(PORT, function () {
-  console.log("App now listening at localhost:" + PORT);
+  console.log("App now listening at http://localhost:" + PORT);
 });
