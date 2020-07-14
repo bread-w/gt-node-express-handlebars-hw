@@ -9,32 +9,34 @@ router.get("/burger", function (req, res) {
       burgers: data,
     };
     console.log(hbsObject);
-    res.render("index", hbsObject);
+    res.render("index",{burgers: data});
   });
 });
 
 router.post("/burger", function (req, res) {
   if (typeof req.body === "object" && typeof req.body.name === "string") {
-    burger.insertOne(req.body.name, function (error, data) {
-      if (error) {
+    burger.insertOne(req.body.name, function (err, data) {
+      if (err) {
         return res.sendStatus(500);
       }
-      res.sendStatus(201);
+      res.sendStatus(201).redirect("/burger");
     });
   }
 });
 
 router.put("/burger/:id", function (req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = parseInt(req.params.id);
   // change boolean value from 0 -> 1
 
   console.log(condition);
   burger.updateOne(1, condition, function (err, data) {
-    if (error) {
+    if (err) {
+      console.log(err);
       return res.sendStatus(500);
+    } else {
+      console.log(data);
     }
-    console.log(data);
-    res.sendStatus(201);
+    res.status(201).redirect("/burger");
   });
 });
 

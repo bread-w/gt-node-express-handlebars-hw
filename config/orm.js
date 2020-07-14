@@ -1,14 +1,5 @@
 var connection = require("./connection.js");
 
-function objToSql(obj) {
-  var arr = [];
-
-  for (var key in obj) {
-    arr.push(key + "=" + obj[key]);
-  }
-  return arr.toString();
-}
-
 var orm = {
   selectAll: function (tableInput, cb) {
     var readBurgers = "SELECT * FROM " + tableInput + ";";
@@ -26,10 +17,10 @@ var orm = {
     });
   },
   updateOne: function (table, objColVals, condition, cb) {
-    var updateData = "Update" + table;
-    updateData += " SET ";
-    updateData += objToSql(objColVals);
-    updateData += " WHERE ";
+    var updateData = "UPDATE " + table;
+    updateData += " SET devoured=";
+    updateData += objColVals;
+    updateData += " WHERE id=";
     updateData += condition;
 
     connection.query(updateData, function (err, res) {
