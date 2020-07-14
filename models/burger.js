@@ -7,15 +7,15 @@ const burger = {
     });
   },
 
-  //   create: function (name, cb) {
-  //     var payload = { burger_name: name };
-  //     orm.insertOne("burgers", payload, function (error, data) {
-  //       if (error) {
-  //         return cb(error);
-  //       }
-  //       cb(null, data);
-  //     });
-  //   },
+    create: function (name, cb) {
+      var payload = { burger_name: name };
+      orm.insertOne("burgers", payload, function (error, data) {
+        if (error) {
+          return cb(error);
+        }
+        cb(null, data);
+      });
+    },
 };
 
 module.exports = burger;
