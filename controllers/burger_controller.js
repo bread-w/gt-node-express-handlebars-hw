@@ -25,7 +25,7 @@ router.post("/burger", function (req, res) {
 });
 
 router.put("/burger/:id", function (req, res) {
-  var condition = "id =" + req.params.id;
+  var condition = "id = " + req.params.id;
   // change boolean value from 0 -> 1
 
   console.log(condition);

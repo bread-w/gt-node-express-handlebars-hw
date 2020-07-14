@@ -29,7 +29,7 @@ var orm = {
     var updateData = "Update" + table;
     updateData += " SET ";
     updateData += objToSql(objColVals);
-    updateDate += " WHERE ";
+    updateData += " WHERE ";
     updateData += condition;
 
     connection.query(updateData, function (err, res) {
