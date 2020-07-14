@@ -1,4 +1,5 @@
 var express = require("express");
+var exphbs = require("express-handlebars");
 var burgerController = require("./controllers/burger_controller.js");
 
 var PORT = process.env.PORT || 3000;
@@ -13,16 +14,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
+
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.get("/", function (req, res) {
-  res.send("Hello World!");
-});
-
-app.use("/api", burgerController);
+app.use(burgerController);
 
 app.listen(PORT, function () {
   console.log("App now listening at http://localhost:" + PORT);
