@@ -1,0 +1,64 @@
+body {
+  background-color: #ff671b;
+}
+
+button {
+  background-color: #ff671b;
+  float: right;
+  position: relative;
+  bottom: 3px;
+  font-weight: bold;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+li {
+    border-style: solid;
+    margin-bottom: 4px;
+    padding: 5px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+#burgerReady {
+  float: left;
+}
+
+#burgerGone {
+  float: right;
+}
+
+#burgerReadyCont {
+background-color: black;
+text-align: center;
+}
+
+#burgerGoneCont {
+background-color: black;
+text-align: center;
+}
+
+#burg {
+    position: relative;
+    top: 6px;
+    left: 10px;
+}
+
+#addBurgerText {
+    color: black;
+}
+
+#submit {
+    position: relative;
+    top: 6px
+}
